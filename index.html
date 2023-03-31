@@ -13,7 +13,7 @@
 	font-family: 'Dancing Script', cursive;
 }
 body{
-    background-image: url(271011049_1266270183851742_4279971812133199560_n.jpg);
+    background-color: #f9f9f9;
     background-size: 100vh;
     background-repeat: no-repeat;
     background-position: top;
@@ -34,33 +34,39 @@ body{
 }
 
 .notebook {
-	position: relative;
-	height: 75%;
-	width: 60%;
-	left: 20%;
-	top: 12.5%;
-	perspective: 1500px;
-	box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .5), 0 1px 10px 0 rgba(0, 0, 0, .25), 0 2px 4px -1px rgba(0, 0, 0, .05);
+	
+    position: relative;
+    height: 62vh;
+    width: 87%;
+    left: 10%;
+    top: -29.5%;
+    perspective: 1500px;
+    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .5), 0 1px 10px 0 rgba(0, 0, 0, .25), 0 2px 4px -1px rgba(0, 0, 0, .05);
+
 }
 
 .cover {
 	position: relative; 
-	height: 100%;
+	height: 104%;
 	width: 100%;
 	background: linear-gradient(to right, #491515 10%, #471a1a 10%);
 	border-right: 1px solid #222;
 	transform-origin: left center;
-	animation: open 5s infinite ease-in-out;
+	animation: open ;
+	animation-duration: 13s;
+    animation-fill-mode: forwards;
 	z-index: 5;
 }
 
 .page {
 	position: relative;
-	height: 100%;
-	width: 100%;
-	top: -100%;
-	background: #dfe3d6;
-	border-right: 1px solid #ccc;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    background-repeat: no-repeat;
+    background-image: url(widd.jpg);
+    background-size: contain;
+    border-right: 1px solid #ccc;
 }
 
 .page.one {
@@ -82,21 +88,22 @@ body{
 
 .page p {
 	position: relative;
-	text-align: center;
-	font-size: 24px;
-	top: 40%;
-	background: none;
+    text-align: center;
+    font-size: 24px;
+    top: 89%;
+    background: none;
+    font-weight: 800;
 }
 
 @keyframes open {
-	0%,30%,100% {
+	30% {
 		transform: rotateY(0deg);
 	}
-	50%,80% {
+	100%,50%,80% {
 		transform: rotateY(-145deg);
 	}
-	80% {
-		background: linear-gradient(to right, #222 50%, #222 50%);
+	80% , 100% {
+		/* background: linear-gradient(to right, #222 50%, #222 50%); */
 	}
 }
 
@@ -105,7 +112,7 @@ body{
 		width: 100%;
 	}
 	50%,80% {
-		width: 98%;
+		width: 100%;
 	}
 }
 
@@ -114,7 +121,7 @@ body{
 		width: 100%;
 	}
 	50%,80% {
-		width: 99%;
+		width: 100%;
 	}
 }
 
@@ -149,8 +156,7 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML ='<bdi>'+ days + "  أيام <br>" + hours + " ساعات </br> "
-  + minutes + " دقائق  " + seconds + " ثواني  "+" </bdi> ";
+  document.getElementById("demo").innerHTML ="<pre>"+days+"  :  "+hours+ "  :  "+minutes+"  :  "+seconds+"</pre>" ;
     
   // If the count down is over, write some text 
   if (distance < 0) {
@@ -159,22 +165,24 @@ var x = setInterval(function() {
   }
 }, 1000);
     </script>
+
+
+	
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>موعد زفافنا</title>
 </head>
 <body>
     <p ></p>
 
     <div class="container">
         <div class="notebook">
-            <div class="cover"></div>
+            <div class="cover" id="cover"></div>
             <div class="page one">
                 <p id="demo"> </p>
             </div>
-            <div class="page two"></div>
-            <div class="page three"></div>
+           
         </div>
     </div>
 </body>
